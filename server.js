@@ -21,7 +21,7 @@ var articles = {
         </p>
         
         <p>
-            Nulla ut sapien ut est tincidunt efficitur. Donec non maximus mauris, sed fringilla diam. Nulla non volutpat massa. Ut dapibus, ex eu sagittis accumsan, tortor nisi cursus diam, eget pharetra urna velit id mauris. Sed ut ipsum condimentum diam malesuada consectetur sed id odio. Pellentesque nunc libero, vehicula a placerat a, venenatis ut ante. Vestibulum ultrices risus eu urna tristique commodo. Vestibulum sit amet sem aliquet, ullamcorper dolor ut, auctor neque. Donec vitae consequat lacus. Sed pretium rhoncus arcu, non efficitur est malesuada sed. Vivamus congue orci metus, a semper neque fermentum non
+            Nulla ut sapien ut est tincidunt efficitur. Donec non maximus mauris, sed fringilla diam. Nulla non volutpat massa. Ut dapibus, ex eu sagittis accumsan, tortor nisi cursus diam, eget pharetra urna velit id mauris. Sed ut ipsum condimentum diam malesuada consectetur sed id odio. Pellentesque nunc libero, vehicula a placerat a, venenatis ut ante. Vestibulum ultrices risus eu urna tristique commodo. Vestibulum sit amet sem aliquet, ullamcorper dolor ut, auctor neque. Donec vitae consequat lacus. Sed pretium rhoncus arcu, non efficitur est malesuada sed. Vivamus congue orci metus, a semper neque  fermentum non
         </p>`
     
 },
@@ -57,7 +57,7 @@ var articles = {
         </p>`
     }
 };
-function createTemplate(data){
+function createTemplate (data) {
     var title = data.title;
     var date = data.date;
     var heading = data.heading;
@@ -114,7 +114,7 @@ app.get('/ui/madi.png', function (req, res) {
 });
 
 app.get('/:articleNmae', function (req, res) {
-    var articleName = req.param.articleName;
+    var articleName = req.params.articleName;
     res.send(createTemplate(articles[articleName]));
 });
 
