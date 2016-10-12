@@ -5,7 +5,8 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 
-var articleOne = {
+var articles = {
+    articleOne : {
     title:'Article1-Muralee',
     heading:'Article One',
     date:'Sep 5 2016',
@@ -23,6 +24,38 @@ var articleOne = {
             Nulla ut sapien ut est tincidunt efficitur. Donec non maximus mauris, sed fringilla diam. Nulla non volutpat massa. Ut dapibus, ex eu sagittis accumsan, tortor nisi cursus diam, eget pharetra urna velit id mauris. Sed ut ipsum condimentum diam malesuada consectetur sed id odio. Pellentesque nunc libero, vehicula a placerat a, venenatis ut ante. Vestibulum ultrices risus eu urna tristique commodo. Vestibulum sit amet sem aliquet, ullamcorper dolor ut, auctor neque. Donec vitae consequat lacus. Sed pretium rhoncus arcu, non efficitur est malesuada sed. Vivamus congue orci metus, a semper neque fermentum non
         </p>`
     
+},
+    articleTwo : {
+        title:'Article2-Muralee',
+        heading:'Article Two',
+        date:'Sep 6 2016',
+        content:`<p>
+            
+            
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris hendrerit justo quis fermentum placerat. Donec ac dictum diam, sit amet blandit ex. Donec iaculis nisl ullamcorper vehicula convallis. Phasellus tempor, lacus vitae varius viverra, arcu mauris molestie metus, finibus pellentesque enim ex vitae orci. Pellentesque accumsan varius metus nec convallis. Aenean dignissim leo eget enim posuere, eu lobortis mi volutpat. Suspendisse nisi risus, cursus quis eros sit amet, congue suscipit nisi. Cras tristique eu lacus eu finibus.
+        </p>
+        
+        <p>
+            Ut finibus vel purus faucibus congue. Duis at ex nec ligula efficitur pulvinar vitae a est. Nunc sit amet erat dictum, aliquam metus a, placerat turpis. Mauris luctus nibh eu nibh sollicitudin convallis. Vestibulum et tempor nunc. In eu lorem ut neque luctus luctus eget a mauris. Vestibulum sit amet pretium turpis. Nunc pellentesque pretium metus, et blandit enim imperdiet quis. Fusce et nulla non nibh egestas viverra. Pellentesque odio velit, bibendum non nisl quis, vehicula maximus eros. Donec viverra mi neque, sit amet vehicula velit volutpat ac.
+        </p>`
+        
+        },
+    articleThree : {
+        
+        title:'Article3-Muralee',
+        heading:'Article Three',
+        date:'Sep 7 2016',
+        content:`<p>
+            
+            
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris hendrerit justo quis fermentum placerat. Donec ac dictum diam, sit amet blandit ex. Donec iaculis nisl ullamcorper vehicula convallis. Phasellus tempor, lacus vitae varius viverra, arcu mauris molestie metus, finibus pellentesque enim ex vitae orci. Pellentesque accumsan varius metus nec convallis. Aenean dignissim leo eget enim posuere, eu lobortis mi volutpat. Suspendisse nisi risus, cursus quis eros sit amet, congue suscipit nisi. Cras tristique eu lacus eu finibus.
+        </p>
+        
+        
+        <p>
+            Nulla ut sapien ut est tincidunt efficitur. Donec non maximus mauris, sed fringilla diam. Nulla non volutpat massa. Ut dapibus, ex eu sagittis accumsan, tortor nisi cursus diam, eget pharetra urna velit id mauris. Sed ut ipsum condimentum diam malesuada consectetur sed id odio. Pellentesque nunc libero, vehicula a placerat a, venenatis ut ante. Vestibulum ultrices risus eu urna tristique commodo. Vestibulum sit amet sem aliquet, ullamcorper dolor ut, auctor neque. Donec vitae consequat lacus. Sed pretium rhoncus arcu, non efficitur est malesuada sed. Vivamus congue orci metus, a semper neque fermentum non
+        </p>`
+    }
 };
 function createTemplate(data){
     var title = data.title;
@@ -80,8 +113,8 @@ app.get('/ui/madi.png', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'madi.png'));
 });
 
-app.get('/article-one', function (req, res) {
-    res.send(createTemplate(articleOne));
+app.get('/:articleNmae', function (req, res) {
+    res.send(createTemplate(articles[articleName]));
 });
 
 app.get('/article-two', function (req, res) {
