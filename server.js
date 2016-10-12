@@ -57,11 +57,11 @@ var articles = {
         </p>`
     }
 };
-function createTemplate (data) {
-    var title = data.title; 
-    var date = data.date;
-    var heading = data.heading;
-    var content = data.content;
+function createTemplate (data1) {
+    var title = data1.title; 
+    var date = data1.date;
+    var heading = data1.heading;
+    var content = data1.content;
 var htmlTemplate=`<html>
 
     <head>
