@@ -6,11 +6,11 @@ var app = express();
 app.use(morgan('combined'));
 
 var articles = {
-    'article-one' : {
-    title:'Article1-Muralee',
-    heading:'Article One',
-    date:'Sep 5 2016',
-    content:`<p>
+ 'article-one' : {
+        title:'Article1-Muralee',
+        heading:'Article One',
+        date:'Sep 5 2016',
+        content:`<p>
             
             
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris hendrerit justo quis fermentum placerat. Donec ac dictum diam, sit amet blandit ex. Donec iaculis nisl ullamcorper vehicula convallis. Phasellus tempor, lacus vitae varius viverra, arcu mauris molestie metus, finibus pellentesque enim ex vitae orci. Pellentesque accumsan varius metus nec convallis. Aenean dignissim leo eget enim posuere, eu lobortis mi volutpat. Suspendisse nisi risus, cursus quis eros sit amet, congue suscipit nisi. Cras tristique eu lacus eu finibus.
